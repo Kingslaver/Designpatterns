@@ -6,19 +6,19 @@ using Web.Models;
 
 namespace Web.SimpleFactory
 {
-    public class EmployeeManagerFactory
+    public class SimpleEmployeeManagerFactory
     {
         IEmployeeManager IEM = null;
         Employee emp = null;
-        public EmployeeManagerFactory(Employee emp)
+        public SimpleEmployeeManagerFactory(Employee emp)
         {
             switch (emp.EmployeeTypeID)
             {
                 case 1:
-                    this.IEM = new PermanentEmployee();
+                    this.IEM = new PermanentEmployeeManager();
                     break;
                 case 2:
-                    this.IEM = new ContractEmployee();
+                    this.IEM = new ContractEmployeeManager();
                     break;
             }
 

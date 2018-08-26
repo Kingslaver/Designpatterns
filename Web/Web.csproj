@@ -159,6 +159,10 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Factory\EmployeeManagerFactory.cs" />
+    <Compile Include="Factory\FactoryMethods\BaseEmployeeFactory.cs" />
+    <Compile Include="Factory\FactoryMethods\ContractEmployeeFactory.cs" />
+    <Compile Include="Factory\FactoryMethods\PermanentEmployeeFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,10 +197,10 @@
       <DependentUpon>DbEmployee.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleFactory\ContractEmployee.cs" />
-    <Compile Include="SimpleFactory\EmployeeManagerFactory.cs" />
+    <Compile Include="SimpleFactory\ContractEmployeeManager.cs" />
+    <Compile Include="SimpleFactory\SimpleEmployeeManagerFactory.cs" />
     <Compile Include="SimpleFactory\IEmployeeManager.cs" />
-    <Compile Include="SimpleFactory\PermanentEmployee.cs" />
+    <Compile Include="SimpleFactory\PermanentEmployeeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EmployeePortal.mdf" />

@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Web.Models;
+using Web.Factory.FactoryMethods;
+using Web.Factory;
 
 namespace Web.Controllers
 {
@@ -51,10 +53,12 @@ namespace Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Number,DepartmentID,DesignationID,HourlyRate,Bonus,EmployeeTypeID")] Employee employee)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Number,DepartmentID,DesignationID,EmployeeTypeID")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                BaseEmployeeFactory bEmpFact = new EmployeeManagerFactory().GetFactory(employee);
+                bEmpFact.CalculateSalary();
                 db.Employees.Add(employee);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

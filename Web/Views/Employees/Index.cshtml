@@ -24,9 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Designation.DesignationName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmployeeType.EmployeeTypeName)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.HourlyRate)
         </th>
@@ -38,6 +36,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EmployeeAllowances.FirstOrDefault().MedicalAllowance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeType.EmployeeTypeName)
         </th>
         <th></th>
     </tr>
@@ -51,6 +52,12 @@
             @Html.DisplayFor(modelItem => item.Number)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation.DesignationName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.HourlyRate)
         </td>
         <td>
@@ -62,12 +69,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.EmployeeAllowances.FirstOrDefault().MedicalAllowance)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Designation.DesignationName)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.EmployeeType.EmployeeTypeName)
         </td>

@@ -5,16 +5,21 @@ using System.Web;
 
 namespace Web.SimpleFactory
 {
-    public class ContractEmployee : IEmployeeManager
+    public class PermanentEmployeeManager : IEmployeeManager
     {
         public decimal GetBonus()
         {
-            return 5;
+            return 10;
         }
 
         public decimal GetHourlyRate()
         {
-            return 20;
+            return 15;
+        }
+
+        public decimal GetHRA()
+        {
+            return 150;
         }
     }
 }
